@@ -1,0 +1,56 @@
+services:
+  postgres-db:
+    image: postgres
+    container_name: postgres-db-sister1
+    ports:
+      - "5432:5432"
+    restart: always
+    environment:
+      POSTGRES_USER: sister1
+      POSTGRES_PASSWORD: sister1
+      POSTGRES_DB: sister1
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin-sister1
+    ports:
+      - "5050:80"
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: sister1@admin.com
+      PGADMIN_DEFAULT_PASSWORD: sister1sister1
+    depends_on:
+      - postgres-db
+
+  mysql-db:
+    image: mysql:8.0
+    container_name: mysql-db-sister1
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: sister1sister1
+      MYSQL_DATABASE: sister1_db
+      MYSQL_USER: sister1
+      MYSQL_PASSWORD: sister1
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin-sister1
+    ports:
+      - "8080:80"
+    restart: always
+    environment:
+      PMA_HOST: mysql-db
+      PMA_USER: sister1
+      PMA_PASSWORD: sister1
+    depends_on:
+      - mysql-db
+
+volumes:
+  postgres_data:
+  mysql_data:

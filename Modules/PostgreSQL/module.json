@@ -1,0 +1,11 @@
+{
+    "name": "PostgreSQL",
+    "alias": "postgresql",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\PostgreSQL\\Providers\\PostgreSQLServiceProvider"
+    ],
+    "files": []
+}
