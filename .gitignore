@@ -1,6 +1,5 @@
 # Laravel & Composer
 /vendor/
-/bootstrap/cache/
 /storage/*.key
 /storage/app/public
 /storage/framework/cache/data
