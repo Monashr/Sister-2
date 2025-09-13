@@ -1,5 +1,9 @@
 # Laravel & Composer
 /vendor/
+/public/storage
+/.phpunit.result.cache
+
+# Laravel storage (runtime)
 /storage/*.key
 /storage/app/public
 /storage/framework/cache/data
@@ -7,8 +11,10 @@
 /storage/framework/testing
 /storage/framework/views
 /storage/logs
-/.phpunit.result.cache
-/public/storage
+
+# Laravel bootstrap cache (ignore generated, keep dir)
+/bootstrap/cache/*.php
+!/bootstrap/cache/.gitkeep
 
 # Environment
 .env
@@ -42,7 +48,7 @@ Thumbs.db
 .idea/
 .fleet/
 .history/
-.vscode/*
+/.vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json
 
